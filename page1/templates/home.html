@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                   <div class="flex space-x-7">
+                      <div>
+                        <a href="#" class="flex px-2 py-4 items-center">
+                            <img class="h-8 w-8" src="{% static 'images/shopping.png' %}" alt="">
+                            <span class="text-gray-500 text-lg font-semibold">Buy&Sell</spam>
+                        </a>
+                      </div>
+                      <div class="items-center spcae-x-1 flex">
+                        <a href="#" class="px-2 py-4 text-gray-500 font-semibold border-b-4 border-green-500">Home</a>
+                        <a href="#" class="px-2 py-4 text-gray-500 font-semibold">About</a>
+                        <a href="#" class="px-2 py-4 text-gray-500 font-semibold">Contact</a>
+                      </div>
+                   </div>
+               </div>
+            </div>
+        </nav>
+       {% for prod in Products %}
+       <a href="{% url 'page1:detail' prod.id %}">
+        {{prod.name}}</br>
+       </a>
+       {% endfor %}
+{% endblock %}
+    
